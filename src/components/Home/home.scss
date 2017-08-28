@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon');
+
+@mixin transition() {
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+}
+
+$orange: #e74c3c;
+$blue: #3498db;
+$twitter: #55acee;
+$facebook: #3b5998;
+$linkedin: #007bb5;
+$shadow: darken($blue, 10%);
+
+@mixin button($color: $blue) {
+  @include transition;
+
+  //cursor: url(https://cur.cursors-4u.net/symbols/sym-1/sym46.cur), auto;
+  border: none;
+  font-family: inherit;
+  border-radius: 5px;
+  padding: 15px 25px;
+  font-size: 22px;
+  text-decoration: none;
+  margin: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  background-color: $color;
+  box-shadow: 0 5px 0 0 darken($color, 10%);
+  text-shadow: 0 1px .5px rgba(0, 0, 0, 0.6);
+
+  &:hover {
+    background-color: lighten($blue, 5%);
+    transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    box-shadow: 0 3px 0 0 darken($color, 10%);
+  }
+
+  &:active {
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    box-shadow: 0 1px 0 0 darken($color, 10%);
+  }
+
+  &:disabled {
+    background-color: lighten($color, 5%);
+    transform: translate(0px, 2px);
+    -webkit-transform: translate(0px, 2px);
+    box-shadow: 0 3px 0 0 darken($color, 10%);
+    cursor: not-allowed;
+    animation: background-loader 1s ease-in-out infinite;
+  }
+
+  @keyframes background-loader {
+    0% {
+      background-color: darken($color, 10%);
+    }
+    50% {
+      background-color: lighten($color, 10%);
+    }
+    100% {
+      background-color: darken($color, 10%);
+    }
+  }
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Coming Soon', cursive;
+  background: $orange;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+#app {
+  width: 100%;
+}
+
+.button {
+  @include button();
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: #fff;
+
+  .header {
+    text-align: center;
+  }
+
+  .title-container {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    margin: 4% auto;
+    transition: all 0.2s ease;
+
+    &__part {
+      font-size: 3.4em;
+      letter-spacing: -0.045em;
+      color: #FFF;
+      text-transform: capitalize;
+      opacity: 1;
+      transition: all 0.2s ease;
+      display: block;
+      position: relative;
+      text-shadow: 0 2px 2px rgba(0, 0, 0, .4);
+
+      &.shuffling {
+        text-shadow: 0 4px 4px rgba(255, 255, 255, 0.2),
+        0 6px 6px rgba(255, 255, 255, 0.4),
+        0 8px 18px rgba(255, 255, 255, 0.8),
+        0 22px 18px rgba(255, 255, 255, 0.5),
+        0 -4px 4px rgba(255, 255, 255, 0.2),
+        0 -6px 6px rgba(255, 255, 255, 0.4),
+        0 -8px 18px rgba(255, 255, 255, 0.8),
+        0 -22px 18px rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.2);
+        top: 12px;
+        animation: roll 0.06s infinite;
+      }
+    }
+
+    .social__container {
+      display: flex;
+      flex-wrap: wrap;
+      background: #ca4235;
+      margin-top: 20px;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, .5);
+
+      &--title {
+        flex-basis: 100%;
+        text-align: center;
+        font-size: inherit;
+        margin-top: 15px;
+      }
+
+      &--button {
+        flex: 1;
+
+        &.facebook {
+          @include button($facebook);
+        }
+        &.linkedin {
+          @include button($linkedin);
+        }
+        &.twitter {
+          @include button($twitter);
+        }
+      }
+    }
+  }
+
+  .controls {
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    p {
+      line-height: 1.5;
+    }
+    .small {
+      font-size: 75%;
+      a {
+        color: $twitter;
+      }
+    }
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: translatey(-30px);
+    opacity: 0;
+  }
+  50% {
+    transform: translatey(-15px);
+    opacity: 1;
+  }
+  100% {
+    transform: translatey(30px);
+    opacity: 0;
+  }
+}

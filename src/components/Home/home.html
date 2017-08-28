@@ -1,0 +1,47 @@
+<div class="content">
+
+  <header class="header">
+    <button class="button" @click="generateTitle()" :disabled="isGenerating">{{buttonText}}</button>
+  </header>
+
+  <div class="title-container">
+    <p class="title-container__part" :class="{ shuffling: shuffling.adjective }">{{created.adjective}}</p>
+    <p class="title-container__part" :class="{ shuffling: shuffling.title }">{{created.title}}</p>
+    <p class="title-container__part" :class="{ shuffling: shuffling.noun }">{{created.noun}}</p>
+
+    <social-sharing
+      class="social__container"
+      v-if="displayShare"
+      url="https://fancyassjobtitlegenerator.com/"
+      :title="created.share"
+      :description="created.share"
+      hashtags="fancy,job,titles,pöhinä,digitalist,not"
+      inline-template>
+      <div>
+        <p class="social__container--title">Share:</p>
+        <network
+          class="social__container--button facebook"
+          network="facebook">
+          Facebook
+        </network>
+        <network
+          class="social__container--button linkedin"
+          network="linkedin">
+          LinkedIn
+        </network>
+        <network
+          class="social__container--button twitter"
+          network="twitter">
+          Twitter
+        </network>
+      </div>
+    </social-sharing>
+  </div>
+
+  <footer class="controls">
+    <p>Wow! So much #pöhinä & #digialist</p>
+    <p class="small">powered by
+      <a href="https://github.com/villeristi/vue.js-starter-template" target="_blank">Vue Starter Template</a>
+    </p>
+  </footer>
+</div>

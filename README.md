@@ -4,19 +4,18 @@
   <img src="src/assets/images/logo.png" height="100" />
 </p>
 
-Generate yourself a [fancy-ass](https://fancyassjobtitlegenerator.com/) job title :money-with-wings:
+Generate yourself a [fancy-ass](https://fancyassjobtitlegenerator.com/) job title :moneybag:
 
 Built with:
 * [Vue.js Starter Template](https://github.com/villeristi/vue.js-starter-template)
+
+## Demo
+Navigate to [https://fancyassjobtitlegenerator.com/](https://fancyassjobtitlegenerator.com/) and see the awesomeness IRL :bowtie:
 
 ## Getting started
 
 1. Be sure you have [Yarn](https://yarnpkg.com/en/docs/install) installed globally.
 2. Clone the repo & run `yarn` from the project root
-
-## Demo
-Navigate to [https://fancyassjobtitlegenerator.com/](https://fancyassjobtitlegenerator.com/) and see the awesomeness IRL :bowtie:
-
 
 ## Available commands
 

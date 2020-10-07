@@ -4,13 +4,13 @@
   <img src="src/assets/images/logo.png" height="100" />
 </p>
 
-Generate yourself a [fancy-ass](https://fancyassjobtitlegenerator.com/) job title :moneybag:
+Generate yourself a [fancy-ass](https://ville.io/fancyass-job-title-generator/) job title :moneybag:
 
 Built with:
 * [Vue.js Starter Template](https://github.com/villeristi/vue.js-starter-template)
 
 ## Demo
-Navigate to [https://fancyassjobtitlegenerator.com/](https://fancyassjobtitlegenerator.com/) and see the awesomeness IRL :bowtie:
+Navigate to [https://ville.io/fancyass-job-title-generator/](https://ville.io/fancyass-job-title-generator/) and see the awesomeness IRL :bowtie:
 
 ## Getting started
 
